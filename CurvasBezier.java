@@ -14,7 +14,7 @@ import java.awt.event.WindowEvent;
 
 /**
  *
- * @author EstrellaBelen
+ * @author EstrellaBelen, jcrunge Cairo González
  */
 public class CurvasBezier implements GLEventListener {
     
