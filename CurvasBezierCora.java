@@ -1,4 +1,3 @@
-import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.GLAutoDrawable;
 import com.jogamp.opengl.GLEventListener;
 import com.jogamp.opengl.awt.GLCanvas;
@@ -7,41 +6,28 @@ import java.awt.Frame;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  *
- * @author EstrellaBelen, jcrunge Cairo González
+ * @author  DaliaOropeza
+ *          EstrellaBelen 
+ *          Jcrunge CairoGonzalez
  */
-public class CurvasBezier implements GLEventListener {
+public class CurvasBezierCora implements GLEventListener {
     
     static final float[]
-            /*Prueba
-            puntosctrlv1 = {-6.0f, -4.0f, 0.0f,
-                             -5.0f, 8.0f, 0.0f,
-                             5.0f, -8.0f, 0.0f,
-                              4.0f, 4.0f, 0.0f};
             
-            original
-            puntosctrlv1 = {-2.0f, -4.0f, 0.0f,
-                             -5.0f, 8.0f, 0.0f,
-                             5.0f, -8.0f, 0.0f,
-                              4.0f, 4.0f, 0.0f};
-    */
-            /*Moñito */
-             puntosctrlv1 =   {7.0f, 8.0f, 0.0f,
-                             -9.0f, 0.0f, 0.0f,
-                              9.0f, -0.0f, 0.0f,
-                             -4.0f, 8.0f, 0.0f};
+             puntosctrlv1 =  {0.0f, 4.0f, 0.0f,
+                              -5.0f, 8.0f, 0.0f,
+                               0.0f, -8.0f, 0.0f,
+                               0.0f, -5.0f, 0.0f,
+                               5.0f, 8.0f, 0.0f,
+                              0.0f, 4.0f, 0.0f};
     static GL2 gl;
     
     public static void main(String[] args) {
         Frame frame = new Frame("CurvasBezier.java");
         GLCanvas canvas = new GLCanvas();
-        canvas.addGLEventListener(new CurvasBezier());
+        canvas.addGLEventListener(new CurvasBezierCora());
         frame.add(canvas);
         frame.setSize(640, 480);
         final Animator animator = new Animator(canvas);
@@ -71,7 +57,7 @@ public class CurvasBezier implements GLEventListener {
         gl = glad.getGL().getGL2();
         gl.glClearColor(0.5f, 0.5f, 0.5f, 0.0f);
         gl.glLoadIdentity();
-        gl.glMap1f(GL2.GL_MAP1_VERTEX_3, 0.0f, 1.0f, 3, 4, puntosctrlv1,0);
+        gl.glMap1f(GL2.GL_MAP1_VERTEX_3, 0.0f, 1.0f, 3, 6, puntosctrlv1,0);
         gl.glEnable(GL2.GL_MAP1_VERTEX_3);
         gl.glMatrixMode(GL2.GL_PROJECTION);
         gl.glLoadIdentity();
@@ -112,3 +98,4 @@ public class CurvasBezier implements GLEventListener {
     @Override
     public void reshape(GLAutoDrawable glad, int i, int i1, int i2, int i3) {
     }
+}
