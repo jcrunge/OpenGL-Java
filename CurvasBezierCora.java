@@ -9,13 +9,13 @@ import java.awt.event.WindowEvent;
 /**
  *
  * @author  DaliaOropeza
- *          EstrellaBelen 
+ *          EstrellaBelen
  *          Jcrunge CairoGonzalez
  */
 public class CurvasBezierCora implements GLEventListener {
-    
+
     static final float[]
-            
+
              puntosctrlv1 =  {0.0f, 4.0f, 0.0f,
                               -5.0f, 8.0f, 0.0f,
                                0.0f, -8.0f, 0.0f,
@@ -23,7 +23,7 @@ public class CurvasBezierCora implements GLEventListener {
                                5.0f, 8.0f, 0.0f,
                               0.0f, 4.0f, 0.0f};
     static GL2 gl;
-    
+
     public static void main(String[] args) {
         Frame frame = new Frame("CurvasBezier.java");
         GLCanvas canvas = new GLCanvas();
@@ -91,7 +91,7 @@ public class CurvasBezierCora implements GLEventListener {
             /*gl.glVertex3f(puntosctrlv1[i], puntosctrlv1[i+1],
             puntosctrlv1[i+2]);*/
             gl.glVertex3fv(puntosctrlv1, i);
-        }   
+        }
         gl.glEnd();
         gl.glFlush();
     }
